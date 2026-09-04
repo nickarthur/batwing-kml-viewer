@@ -43,6 +43,16 @@ full, evolving rule set lives in one place — see **Full rules** at the bottom.
   it is how a future reader reconstructs why a change exists.
 - Prefer small, explicit, easy-to-diff changes over large rewrites.
 
+## GitHub Evidence
+
+- For private GitHub repositories, use authenticated `gh` commands or an authenticated
+  GitHub/MCP repository tool. Verify access with `gh auth status` before relying on
+  repository content.
+- Anonymous web fetches are not valid evidence for private content. A `404` from an
+  unauthenticated source is an access signal, not proof that the repository or path is
+  absent. If authenticated access is unavailable, report the limitation and stop rather
+  than infer from the response.
+
 ## Autonomy — who decides what
 
 - **In the editor, with a human present:** make reversible, in-scope changes and report
